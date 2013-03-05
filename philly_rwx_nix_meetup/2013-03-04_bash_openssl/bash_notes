@@ -1,0 +1,11 @@
+
+Bash man page keywords
+Page 2, Arguments $0,exit status
+Page 3, Reserved Words
+Page 4, Pipelines |,! negate exit status logic
+Page 5, Compound Commands (command),((expr)),for,if,while
+Page 9, Special parameters $? 
+Page 21, Command Substitution $(command)
+Page 21, Arithmetic Expansion
+Page 23, Redirection
+Page 27, Arithmetic Evaluation

@@ -1,0 +1,21 @@
+Philly *nix rwx Club Meetup #1
+==================================================
+Introduction to openssl lightening talk notes
+==================================================
+
+* openssl toolset (general), how to browse its man pages, and troubleshooting SSL
+
+* SSL concepts, Certificate generation, Certificate Authorities
+
+*
+  * open the man page, show commands, show command man pages
+  * x509 man page, point out -in, point out -text, show certificate info
+
+* Any service, smtps, imaps, ldaps, https can be queried for a certificate.
+  * Telnet can be used to troubleshoot network sockets.
+  * show s_client man page, point out -connect
+
+  * show x509 man page, point out -in or stdin, null term ends a connection
+  * openssl|grep|sed>date, echo into awk for calculation
+
+==================================================

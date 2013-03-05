@@ -1,0 +1,7 @@
+1. install icinga packages
+2. start and setup mysql
+3. setup http, create icingaadmin htpasswd user.
+4. modify resources.cfg to reflect nagios plugins
+5. optionally link plugins to /etc/icinga/
+6. start httpd, icinga, ido2db
+7. browse

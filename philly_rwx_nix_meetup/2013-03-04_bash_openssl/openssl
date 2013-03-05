@@ -1,0 +1,32 @@
+Philly *nix rwx Club Meetup #1
+==================================================
+Introduction to openssl lightening talk
+==================================================
+
+* What is this about?
+
+* What is it not about?
+
+* Introduction to openssl
+  * openssl man pages
+  * openssl x509
+
+* Query SSL sockets on servers
+  * telnet http service
+  * telnet https using openssl s_client
+
+* Simple SSL expiration detection
+  * Use what we learned about x509 and s_client
+
+==================================================
+Links
+==================================================
+
+Openssl homepage - http://www.openssl.org/
+
+Use Google to learn more about SSL concepts!
+
+Certificate Authority - http://www.g-loaded.eu/2005/11/10/be-your-own-ca/
+* Google terms
+  * be your own ca
+  * be your own certificate authority

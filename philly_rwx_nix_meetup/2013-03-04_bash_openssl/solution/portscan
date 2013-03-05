@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [ -z "$1" ];then
+  echo "Must provide host!" > /dev/stderr
+  echo "Synopsis:" > /dev/stderr
+  echo "  portscan host" > /dev/stderr
+  exit 1
+fi
+
+function scan() {
+  host=$1
+  offset=$2
+  while [ "$offset" -lt "1001" ];do
+    if nc $host $offset &>/dev/null </dev/null;then
+      echo "$offset"
+      return
+    fi
+    ((offset++))
+  done
+  echo "eos"
+}
+
+echo "Scanning host $1" >/dev/stderr
+
+port=1
+result="1"
+while [ "$port" != "eos" ];do
+  port="$(scan $1 $port)"
+  if [ "$port" != "eos" ];then
+    echo "$port open/tcp"
+    result="0"
+  else
+    break
+  fi
+  ((port++))
+done
+
+if [ "$result" -eq "1" ];then
+  echo "no ports open" >/dev/stderr
+fi
+
+exit $result

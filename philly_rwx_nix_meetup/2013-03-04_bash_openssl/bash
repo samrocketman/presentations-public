@@ -1,0 +1,12 @@
+* Introduction to bash scripting
+  * The Unix Way - bash is just bash; no need to bash
+  * POSIX stdout, stderr, stdin, exit status
+  * Logic and exit codes
+
+* Hacking stuff
+
+* At the end...
+  * Firewall/timeouts
+  * Quoting special characters
+  * Parameter Expansion
+  * Other tools and bullshitting????

@@ -1,0 +1,17 @@
+two screens
+1: presentation
+2: bash
+
+1:
+Split presentation and notes.
+gg all documents.
+scrollbind all documents
+^w _
+Control presentation from notes window scrolling down.
+
+2:
+cd /etc/httpd/ssl.crt/
+
+==================================================
+Presentation format (current discussed topic at the top)
+show browser, show certificate expiration, CA signed certificate

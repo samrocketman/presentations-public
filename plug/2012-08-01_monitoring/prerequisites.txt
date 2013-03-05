@@ -1,0 +1,16 @@
+#Icinga and Several Plug-ins
+yum check-update
+yum update -y
+yum groupinstall "Development Tools" "Legacy Software Development" -y
+yum install httpd httpd-devel gcc glibc glibc-common gd gd-devel libjpeg libjpeg-devel libpng libpng-devel mysql mysql-server libdbi libdbi-devel libdbi-drivers libdbi-dbd-mysql net-snmp net-snmp-devel net-snmp-utils php php-cli php-pear php-xmlrpc php-xsl php-pdo php-gd php-ldap php-mysql php-mysql php-soap java-1.6.0-openjdk java-1.6.0-openjdk-devel zip unzip -y
+
+#Nagios-plugins
+yum install nagios-plugins-all -y
+
+#PNP4Nagios additional prerequisites
+yum install perl rrdtool rrdtool-perl -y
+
+#Database Setup
+mysql> CREATE USER 'icinga'@'localhost' IDENTIFIED BY 'icinga';
+mysql> CREATE DATABASE icinga;
+mysql> GRANT ALL PRIVILEGES ON icinga.* TO 'icinga'@'localhost' IDENTIFIED BY 'icinga';

@@ -1,0 +1,44 @@
+#!/bin/bash
+
+if [ -z "$1" ];then
+  echo "Requires host name!" > /dev/stderr
+  echo "Synopsis:" > /dev/stderr
+  echo "  portscan hostname" > /dev/stderr
+  exit 1
+fi
+
+function scan(){
+  host=$1
+  offset=$2
+  found=0
+  while [ "$offset" -lt "1001" ];do
+    if nc $host $offset 1>/dev/null 2>&1 </dev/null;then
+      found=1
+      break
+    fi
+    offset=$((offset+1))
+  done
+  if [ "$found" = "1" ];then
+    echo $offset
+  else
+    #if not found and reached port 1000 then echo end of scan (eos)
+    echo "eos"
+  fi
+}
+
+echo "Scanning host $1" > /dev/stderr
+
+port=1
+result=1
+while [ "$port" != "eos" ];do
+  port=$(scan $1 $port)
+  if [ "$port" != "eos" ];then
+    echo "$port open/tcp"
+    port=$((port+1))
+    result=0
+  fi
+done
+if [ "$result" = "1" ];then
+  echo "no ports open" > /dev/stderr
+fi
+exit $result
