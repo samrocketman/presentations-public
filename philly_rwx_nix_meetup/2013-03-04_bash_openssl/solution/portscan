@@ -11,7 +11,7 @@ function scan() {
   host=$1
   offset=$2
   while [ "$offset" -lt "1001" ];do
-    if nc $host $offset &>/dev/null </dev/null;then
+    if nc $host $offset &> /dev/null < /dev/null;then
       echo "$offset"
       return
     fi
@@ -20,7 +20,7 @@ function scan() {
   echo "eos"
 }
 
-echo "Scanning host $1" >/dev/stderr
+echo "Scanning host $1" > /dev/stderr
 
 port=1
 result="1"
@@ -36,7 +36,7 @@ while [ "$port" != "eos" ];do
 done
 
 if [ "$result" -eq "1" ];then
-  echo "no ports open" >/dev/stderr
+  echo "no ports open" > /dev/stderr
 fi
 
 exit $result
