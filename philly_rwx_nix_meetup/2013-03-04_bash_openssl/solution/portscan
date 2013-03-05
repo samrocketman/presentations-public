@@ -1,4 +1,6 @@
 #!/bin/bash
+#We wrote this script during the presentation to learn bash referring to the bash man page
+#This is a simple port scanner using netcat
 
 if [ -z "$1" ];then
   echo "Must provide host!" > /dev/stderr
